@@ -124,7 +124,7 @@ class Tabs {
     const pressed = event.keyCode;
 
     if (this.direction[pressed]) {
-      const target = event.target;
+      const target = event.target as HTMLElement & { index: number };
       if (target.index !== undefined) {
         if (this.tabs[target.index + this.direction[pressed]]) {
           this.tabs[target.index + this.direction[pressed]].focus();
