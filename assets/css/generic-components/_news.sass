@@ -1,0 +1,47 @@
+
+.news
+  display: grid
+  grid-template-areas: "img date" "img headline" "img content" "img link"
+  grid-template-columns: 30% auto
+  grid-template-rows: auto
+  grid-column-gap: 20px
+  padding: 20px
+  border-bottom: 1px solid #D9DADB
+
+  &__thumb
+    grid-area: img
+    max-width: 100%
+    height: auto
+    border: 4px solid #D9DADB
+
+  &__content
+    grid-area: content
+
+  &__headline
+    grid-area: headline
+    color: #2A83CF
+    font-size: 1.3em
+    margin: 5px 0 0
+
+  &__date
+    grid-area: date
+
+  &__link
+    grid-area: link
+    display: flex
+    align-items: center
+    @include link
+    &:before
+      @include arrow
+  
+  &__all
+    padding: 20px
+    display: flex
+    justify-content: flex-end
+    & > a
+      display: flex
+      align-items: center
+      @include link
+      &:before
+        @include arrow
+      
